@@ -95,6 +95,18 @@
                     }
 
                     dayDiv.textContent = day;
+
+
+                    // 祝日をタップした時に表示
+                    dayDiv.addEventListener("click", function () {
+                        // すべての祝日から'clicked'クラスを削除
+                        const allHolidays = document.querySelectorAll('.holiday');
+                        allHolidays.forEach(holiday => holiday.classList.remove('clicked'));
+
+                        // クリックされた祝日に'clicked'クラスを追加
+                        this.classList.add("clicked");
+                    });
+
                     daysDiv.appendChild(dayDiv);
                 }
 
